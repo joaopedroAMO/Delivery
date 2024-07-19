@@ -166,6 +166,7 @@ nav > ul > li > p{
     justify-content: center;
     gap: 6%;
     transition: .2s;
+    padding: 3px;
 }
 
 .content-image{
@@ -187,6 +188,7 @@ nav > ul > li > p{
     gap: 10px;
     padding: 10px;
     transition: .2s;
+    padding: 3px;
 }
 
 .grid-content-dois:hover, .grid-content-um:hover{
@@ -194,7 +196,11 @@ nav > ul > li > p{
 }
 
 .content-image-dois{
-    width: 80%;
+    width: 65%;
+}
+
+strong{
+    text-align: center;
 }
 
 /*propaganda */
