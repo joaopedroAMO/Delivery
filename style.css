@@ -189,6 +189,7 @@ nav > ul > li > p{
     padding: 10px;
     transition: .2s;
     padding: 3px;
+    justify-content: space-evenly;
 }
 
 .grid-content-dois:hover, .grid-content-um:hover{
