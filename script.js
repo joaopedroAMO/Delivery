@@ -32,11 +32,13 @@ function toggleLike(element) {
     }, 3000);
 }
 
+const iconNewAddres = document.getElementsByClassName('newInput')[0];
 function openNewAddress(){
-   const NewAddressBox =  document.querySelector('#trocar-endereco');
+    const NewAddressBox =  document.querySelector('#trocar-endereco');
 
    if(NewAddressBox.style.display == "none"){
     NewAddressBox.style.display = "flex";
+    iconNewAddres.style.transform = "rotate(180deg)";
    }else{
     setTimeout(function() {
         NewAddressBox.classList.add('close');
@@ -46,6 +48,7 @@ function openNewAddress(){
             NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
         }, 200); // Tempo da animação de fade-out
     }, 250);
+    iconNewAddres.style.transform = "rotate(0deg)";
    }
 }
 
@@ -63,6 +66,7 @@ function trocarEndereco(){
                 NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
             }, 200); // Tempo da animação de fade-out
         }, 250);
+        iconNewAddres.style.transform = "rotate(0deg)";
         return;
     }
 
@@ -78,4 +82,5 @@ function trocarEndereco(){
             NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
         }, 200); // Tempo da animação de fade-out
     }, 250);
+    iconNewAddres.style.transform = "rotate(0deg)";
 }
