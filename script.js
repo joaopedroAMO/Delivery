@@ -72,7 +72,7 @@ function trocarEndereco(){
 
     addressDisplay.innerHTML = addresUser;
 
-    NewAddressBox.style.display = "block"; // Exibe o elemento com animação
+    NewAddressBox.style.display = "flex"; // Exibe o elemento com animação
 
     setTimeout(function() {
         NewAddressBox.classList.add('close');
