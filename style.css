@@ -84,6 +84,48 @@ input[type=button]:hover{
     color: red;
 }
 
+/*toca de endereco*/
+#trocar-endereco {
+    position: fixed;
+    display: none;
+    padding: 10px 30px;
+    gap: 10px;
+    background-color: #fff;
+    animation: open 0.5s forwards;
+}
+
+#trocar-endereco > input[type=text] {
+    width: 150%;
+}
+
+#trocar-endereco.close {
+    position: fixed;
+    animation: close 0.5s forwards;
+}
+
+@keyframes open {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes close {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+/*fimtoca de endereco*/
+
 nav{
     position: fixed;
     display: flex;

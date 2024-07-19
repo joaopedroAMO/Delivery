@@ -8,7 +8,7 @@
     <title>delivery-web-disign</title>
 </head>
 <body>
-    <div id="login" class="login">
+    <!-- <div id="login" class="login">
         <div class="content">
             <label for="username">Seu nome</label>
             <input type="text" name="username" id="username">
@@ -18,15 +18,20 @@
             <input type="text" name="address" id="address">
         </div>
         <input type="button" value="REGISTRAR" onclick="a()">
-    </div>
+    </div> -->
 
-    <div class="enderecoContainer">
+    <div class="enderecoContainer" onclick="openNewAddress()">
         <p id="addressDisplay">
             Endereço
         </p>
         <?xml version="1.0" encoding="utf-8"?>
         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
         <svg width="15px" height="15px" viewBox="0 0 1024 1024" class="icon newInput"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="currentcolor" /></svg>
+    </div>
+
+    <div id="trocar-endereco">
+        <input type="text" name="newAddress" id="newAddress">
+        <input type="button" value="Trocar" placeholder="Seu novo endereço" onclick="trocarEndereco()">
     </div>
 
     <div class="dropdown">

@@ -32,3 +32,50 @@ function toggleLike(element) {
     }, 3000);
 }
 
+function openNewAddress(){
+   const NewAddressBox =  document.querySelector('#trocar-endereco');
+
+   if(NewAddressBox.style.display == "none"){
+    NewAddressBox.style.display = "flex";
+   }else{
+    setTimeout(function() {
+        NewAddressBox.classList.add('close');
+
+        setTimeout(function() {
+            NewAddressBox.style.display = "none";
+            NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
+        }, 200); // Tempo da animação de fade-out
+    }, 250);
+   }
+}
+
+function trocarEndereco(){
+    const NewAddressBox = document.querySelector('#trocar-endereco');
+    const addressDisplay = document.querySelector('#addressDisplay');
+    const addresUser = document.querySelector('#newAddress').value;
+
+    if(addresUser === ""){
+        setTimeout(function() {
+            NewAddressBox.classList.add('close');
+    
+            setTimeout(function() {
+                NewAddressBox.style.display = "none";
+                NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
+            }, 200); // Tempo da animação de fade-out
+        }, 250);
+        return;
+    }
+
+    addressDisplay.innerHTML = addresUser;
+
+    NewAddressBox.style.display = "block"; // Exibe o elemento com animação
+
+    setTimeout(function() {
+        NewAddressBox.classList.add('close');
+
+        setTimeout(function() {
+            NewAddressBox.style.display = "none";
+            NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
+        }, 200); // Tempo da animação de fade-out
+    }, 250);
+}
