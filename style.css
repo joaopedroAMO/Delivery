@@ -181,6 +181,7 @@ nav > ul > li > p{
 .grid-content-dois{
     background-color: #f2f2f2;
     width: 25%;
+    max-width: 25%;
     border-radius: 10px;
     display: flex;
     flex-direction: column-reverse;
@@ -196,11 +197,13 @@ nav > ul > li > p{
 }
 
 .content-image-dois{
+    max-width: 65%;
     width: 65%;
 }
 
 strong{
     text-align: center;
+    font-size: small;
 }
 
 /*propaganda */
