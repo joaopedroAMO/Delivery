@@ -33,54 +33,41 @@ function toggleLike(element) {
 }
 
 const iconNewAddres = document.getElementsByClassName('newInput')[0];
-function openNewAddress(){
-    const NewAddressBox =  document.querySelector('#trocar-endereco');
+const NewAddressBox = document.querySelector('#trocar-endereco');
 
-   if(NewAddressBox.style.display == "none"){
-    NewAddressBox.style.display = "flex";
-    iconNewAddres.style.transform = "rotate(180deg)";
-   }else{
-    setTimeout(function() {
-        NewAddressBox.classList.add('close');
-
-        setTimeout(function() {
-            NewAddressBox.style.display = "none";
-            NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
-        }, 200); // Tempo da animação de fade-out
-    }, 250);
-    iconNewAddres.style.transform = "rotate(0deg)";
-   }
+function openNewAddress() {
+    if (NewAddressBox.style.display === "none" || NewAddressBox.style.display === "") {
+        NewAddressBox.style.display = "flex";
+        NewAddressBox.classList.remove('close'); // Garante que a classe de fechamento seja removida
+        iconNewAddres.style.transform = "rotate(180deg)";
+    } else {
+        closeAddressBox();
+    }
 }
 
-function trocarEndereco(){
-    const NewAddressBox = document.querySelector('#trocar-endereco');
+function closeAddressBox() {
+    setTimeout(function() {
+        NewAddressBox.classList.add('close');
+        setTimeout(function() {
+            NewAddressBox.style.display = "none";
+            NewAddressBox.classList.remove('close');
+        }, 200); 
+    }, 250);
+    iconNewAddres.style.transform = "rotate(0deg)";
+}
+
+function trocarEndereco() {
     const addressDisplay = document.querySelector('#addressDisplay');
     const addresUser = document.querySelector('#newAddress').value;
 
-    if(addresUser === ""){
-        setTimeout(function() {
-            NewAddressBox.classList.add('close');
-    
-            setTimeout(function() {
-                NewAddressBox.style.display = "none";
-                NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
-            }, 200); // Tempo da animação de fade-out
-        }, 250);
-        iconNewAddres.style.transform = "rotate(0deg)";
+    if (addresUser === "") {
+        closeAddressBox();
         return;
     }
 
     addressDisplay.innerHTML = addresUser;
+    NewAddressBox.style.display = "flex";
+    NewAddressBox.classList.remove('close'); // Garante que a classe de fechamento seja removida
 
-    NewAddressBox.style.display = "flex"; // Exibe o elemento com animação
-
-    setTimeout(function() {
-        NewAddressBox.classList.add('close');
-
-        setTimeout(function() {
-            NewAddressBox.style.display = "none";
-            NewAddressBox.classList.remove('close'); // Remove a classe para permitir reuso
-        }, 200); // Tempo da animação de fade-out
-    }, 250);
-    iconNewAddres.style.transform = "rotate(0deg)";
+    closeAddressBox();
 }

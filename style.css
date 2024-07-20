@@ -35,13 +35,14 @@ body{
 }
 
 input[type=text], input[type=button]{
-    width: 250px;
+    width: max-content;
     padding: 5px;
     border-radius: 10px;
 }
 
 input[type=text]{
     border: 2px  solid #ff2b2b;
+    width: 100%;
 }
 
 input[type=button]{
@@ -111,7 +112,7 @@ input[type=button]:hover{
 
 @keyframes open {
     from {
-        opacity: 0;
+        opacity: 0.5;
         transform: translateY(-20px);
     }
     to {
@@ -126,7 +127,7 @@ input[type=button]:hover{
         transform: translateY(0);
     }
     to {
-        opacity: 0;
+        opacity: 0.5;
         transform: translateY(-20px);
     }
 }
